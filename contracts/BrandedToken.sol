@@ -1,6 +1,5 @@
 pragma solidity ^0.4.24;
 
-import "zeppelin-solidity/contracts/token/ERC827/ERC827Token.sol";
 import "zeppelin-solidity/contracts/token/ERC20/SafeERC20.sol";
 import "zeppelin-solidity/contracts/token/ERC20/DetailedERC20.sol";
 import "zeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
@@ -8,7 +7,7 @@ import "zeppelin-solidity/contracts/token/ERC20/BurnableToken.sol";
 import "zeppelin-solidity/contracts/token/ERC20/PausableToken.sol";
 import "zeppelin-solidity/contracts/math/SafeMath.sol";
 
-contract BrandedToken is ERC827Token,MintableToken,BurnableToken,PausableToken,DetailedERC20 {
+contract BrandedToken is MintableToken,BurnableToken,PausableToken,DetailedERC20 {
     using SafeERC20 for ERC20;
     using SafeMath for uint256;
     
