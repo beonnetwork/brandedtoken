@@ -11,7 +11,7 @@ contract BrandedToken is MintableToken,BurnableToken,PausableToken,DetailedERC20
     using SafeERC20 for ERC20;
     using SafeMath for uint256;
     
-    uint256 multiplier;
+    uint256 public multiplier;
     constructor (
         uint256 _initialAmount,
         string _tokenName,
@@ -19,7 +19,7 @@ contract BrandedToken is MintableToken,BurnableToken,PausableToken,DetailedERC20
         string _tokenSymbol
     ) DetailedERC20(_tokenName,_tokenSymbol, _decimalUnits) public {
         multiplier = 10**(uint256(_decimalUnits));
-        balances[owner] = _initialAmount*multiplier;         // Give the creator all initial tokens
-        totalSupply_ = _initialAmount*multiplier;            // Update total supply
+        balances[owner] = _initialAmount;         // Give the creator all initial tokens
+        totalSupply_ = _initialAmount;            // Update total supply
     }
 }
